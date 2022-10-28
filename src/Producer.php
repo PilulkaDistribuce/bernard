@@ -33,8 +33,6 @@ class Producer
 
     private function dispatch($eventName, EnvelopeEvent $event): void
     {
-        $this->dispatcher instanceof \Symfony\Contracts\EventDispatcher\EventDispatcherInterface
-           ? $this->dispatcher->dispatch($event, $eventName)
-           : $this->dispatcher->dispatch($eventName, $event);
+        $this->dispatcher->dispatch($event, $eventName);
     }
 }
